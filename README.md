@@ -17,8 +17,6 @@ Tweet Jokes, Movie Reviews from the NYT, Quotes from famous historical figures a
   ```
   pip install -r requirements.txt
   ```
-* Go to the folder queries/static and execute:
-  ```
-  git clone https://github.com/startbootstrap/startbootstrap-scrolling-nav
-  ```
-  
+* From the root of the app go to the directory posts and open the file credentials.py
+
+* Update the credentials as a String
