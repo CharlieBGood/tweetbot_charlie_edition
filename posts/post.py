@@ -10,7 +10,7 @@ def post_quote(sender, **kwargs):
 @receiver(new_joke)
 def post_joke(sender, **kwargs):
 	if sender.joke:
-		Post.objects.create(content=sender.joke)
+		Post.objects.create(content=sender.joke, tweet_type='joke')
 	else:
 		joke = sender.setUp + '\n' + sender.delivery
 		Post.objects.create(content=joke, tweet_type='joke')
@@ -22,5 +22,5 @@ def post_cuck_fact(sender, **kwargs):
 
 @receiver(new_movie_review)
 def post_movie_review(sender, **kwargs):
-	Post.objects.create(author=sender.author, content=sender.summaryShort, title=sender.author, 
+	Post.objects.create(author=sender.author, content=sender.summaryShort, title=sender.title, 
 		link=sender.urlLink, tweet_type='movie_review')

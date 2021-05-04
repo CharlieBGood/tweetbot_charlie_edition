@@ -9,10 +9,10 @@ from .models import Post
 @receiver(post_save, sender=Post)
 def tweet_post(sender, instance, **kwargs):
     twitter_auth_keys = {
-        "CONSUMER_KEY": os.environ.get("CONSUMER_KEY"),
-        "CONSUMER_SECRET": os.environ.get("CONSUMER_SECRET"),
-        "ACCESS_TOKEN": os.environ.get("ACCESS_TOKEN"),
-        "ACCESS_TOKEN_SECRET": os.environ.get("ACCESS_TOKEN_SECRET")
+        "CONSUMER_KEY": CONSUMER_KEY,
+        "CONSUMER_SECRET": CONSUMER_SECRET,
+        "ACCESS_TOKEN": ACCESS_TOKEN,
+        "ACCESS_TOKEN_SECRET": ACCESS_TOKEN_SECRET
     }
 
     auth = tweepy.OAuthHandler(
@@ -32,7 +32,9 @@ def tweet_post(sender, instance, **kwargs):
         tweet = instance.content + '\n\n' + instance.author + '\n#TweetBotCharlieEdition' 
 
     elif instance.tweet_type == 'movie_review':
-        tweet = instance.title + '\n' + instance.content + '\n' + instance.link + '\n' + instance.author
+        tweet = instance.title + '\n' + instance.content + '\n' + instance.link + '\n' + instance.author + '\n#TweetBotCharlieEdition'
+
+
 
     try:
         api.update_status(tweet)
