@@ -1,0 +1,5 @@
+django==3.2
+tweepy==3.10.0
+schedule==1.1.0
+jokeapi==0.2.10
+apscheduler==3.7.0
