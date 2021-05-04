@@ -172,26 +172,3 @@ def random_func(random_object):
 		if counter >= tweetingTimes:
 		    flag = False
 		    scheduler.shutdown()
-
-
-def run_manually():
-
-	answer = ''
-	while not answer:
-		answer = input('What kind of tweets would you like to post?\nJokes [j]\nQuotes [q]\nChuck Norris Fact [f]'+
-			'\nMovie Reviews [m]\nAnswer: ')
-
-		if answer == 'q':
-			job(arguments=quote_query())
-		elif answer == 'j':
-			job(arguments=joke_query())
-		elif answer == 'f':
-			job(arguments=chuck_norris_fact())
-		elif answer == 'm':
-			job(arguments=nyt_movie_review())
-		else:
-			answer = ''
-
-	#while True:
-	#	schedule.run_pending()
-	#	time.sleep(1)
