@@ -17,6 +17,11 @@ Tweet Jokes, Movie Reviews from the NYT, Quotes from famous historical figures a
   ```
   pip install -r requirements.txt
   ```
-* From the root of the app go to the directory posts and open the file credentials.py
+* From the root of the project go to the directory posts and open the file credentials.py
 
 * Update the credentials as a String
+
+* In your terminal go to the root folder of the project and type:
+  ```
+  python manage.py runserver
+  ```
