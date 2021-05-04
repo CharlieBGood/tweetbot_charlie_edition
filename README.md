@@ -17,8 +17,3 @@ Tweet Jokes, Movie Reviews from the NYT, Quotes from famous historical figures a
   ```
   pip install -r requirements.txt
   ```
-* Go to the folder queries/static and execute:
-  ```
-  git clone https://github.com/startbootstrap/startbootstrap-scrolling-nav
-  ```
-  
